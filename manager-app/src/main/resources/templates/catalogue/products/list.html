@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products List</title>
+</head>
+<body>
+<a th:href="@{/catalogue/products/create}">+ Create Product</a>
+<h1>Products List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Product</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.id}"></td>
+        <td>
+            <a th:href="@{/catalogue/products/{productId}(productId=${product.id})}"
+               th:text="${product.title}"></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
