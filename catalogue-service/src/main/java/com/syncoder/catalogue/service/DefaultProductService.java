@@ -1,7 +1,7 @@
-package com.syncoder.managerapp.service;
+package com.syncoder.catalogue.service;
 
-import com.syncoder.managerapp.entity.Product;
-import com.syncoder.managerapp.repository.ProductRepository;
+import com.syncoder.catalogue.entity.Product;
+import com.syncoder.catalogue.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

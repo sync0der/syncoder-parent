@@ -1,6 +1,6 @@
-package com.syncoder.managerapp.repository;
+package com.syncoder.catalogue.repository;
 
-import com.syncoder.managerapp.entity.Product;
+import com.syncoder.catalogue.entity.Product;
 
 import java.util.List;
 import java.util.Optional;
