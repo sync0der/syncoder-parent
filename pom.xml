@@ -13,6 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>manager-app</module>
+        <module>catalogue-service</module>
     </modules>
     <name>syncoder-parent</name>
     <description>syncoder-parent</description>
