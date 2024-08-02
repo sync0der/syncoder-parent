@@ -42,7 +42,7 @@ public class ProductsController {
             return "catalogue/products/new_product";
         } else {
             Product product = this.productsRestClient.createProduct(payload.title(), payload.details());
-            return "redirect:/catalogue/products/%d".formatted(product.getId());
+            return "redirect:/catalogue/products/%d".formatted(product.id());
         }
     }
 
