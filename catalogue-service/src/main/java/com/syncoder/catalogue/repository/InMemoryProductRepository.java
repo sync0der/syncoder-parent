@@ -1,6 +1,6 @@
 package com.syncoder.catalogue.repository;
 
-import com.syncoder.managerapp.entity.Product;
+import com.syncoder.catalogue.entity.Product;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
