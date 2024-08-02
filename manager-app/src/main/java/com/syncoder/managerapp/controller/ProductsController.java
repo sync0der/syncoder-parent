@@ -1,8 +1,8 @@
 package com.syncoder.managerapp.controller;
 
+import com.syncoder.managerapp.client.ProductsRestClient;
 import com.syncoder.managerapp.controller.payload.NewProductPayload;
 import com.syncoder.managerapp.entity.Product;
-import com.syncoder.managerapp.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,11 +17,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping("/catalogue/products")
 public class ProductsController {
-    private final ProductService productService;
+    private final ProductsRestClient productsRestClient;
 
     @GetMapping("list")
     public String getProductsList(Model model) {
-        model.addAttribute("products", this.productService.findAllProducts());
+        model.addAttribute("products", this.productsRestClient.findAllProducts());
         return "catalogue/products/list";
     }
 
@@ -41,7 +41,7 @@ public class ProductsController {
                     .toList());
             return "catalogue/products/new_product";
         } else {
-            Product product = this.productService.createProduct(payload.title(), payload.details());
+            Product product = this.productsRestClient.createProduct(payload.title(), payload.details());
             return "redirect:/catalogue/products/%d".formatted(product.getId());
         }
     }
