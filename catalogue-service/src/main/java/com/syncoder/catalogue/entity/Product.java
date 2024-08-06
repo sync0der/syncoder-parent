@@ -3,6 +3,7 @@ package com.syncoder.catalogue.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import jdk.jfr.Name;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(schema = "catalogue", name = "t_product")
+@NamedQueries(
+        {
+                @NamedQuery(name = "Product.findAllByTitleLileIgoringCase",
+                        query = "select p from Product p where p.title ilike :filter")
+        }
+)
+@NamedNativeQueries(
+        {
+                @NamedNativeQuery(name = "Product.findAllByTitleLileIgoringCaseNative",
+                        query = "select * from catalogue.t_product where c_title ilike :filter")
+        }
+)
 public class Product {
 
     @Id
