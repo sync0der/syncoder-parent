@@ -1,16 +1,7 @@
 package com.syncoder.catalogue.repository;
 
 import com.syncoder.catalogue.entity.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-import java.util.Optional;
-
-public interface ProductRepository {
-    List<Product> findAll();
-
-    Product save(Product product);
-
-    Optional<Product> findById(Integer productId);
-
-    void deleteById(Integer id);
+public interface ProductRepository extends JpaRepository<Product, Integer> {
 }
