@@ -1,6 +1,5 @@
 package com.syncoder.managerapp.client;
 
-import com.syncoder.managerapp.controller.ProductController;
 import com.syncoder.managerapp.entity.Product;
 
 import java.util.List;
