@@ -20,7 +20,7 @@ public class DefaultProductService implements ProductService {
     @Override
     public List<Product> findAllProducts(String filter) {
         if (filter != null && !filter.isBlank()) {
-            return this.productRepository.findAllByTitleLikeIgnoreCase(filter);
+            return this.productRepository.findAllByTitleLikeIgnoreCase("%" + filter + "%");
         }else {
             return this.productRepository.findAll();
         }
